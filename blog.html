@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    #searchBar {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      border:1px solid #ccc;
+    }
+    #loadMore { margin-top: 15px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Blog</h1>
+    <p>Güncel yazılarımı okuyabilirsiniz</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Ana Sayfa</a>
+    <a href="projeler.html">Projeler</a>
+    <a href="galeri.html">Galeri</a>
+    <a href="blog.html">Blog</a>
+    <a href="hakkinda.html">Hakkında</a>
+    <a href="iletisim.html">İletişim</a>
+  </nav>
+
+  <div class="container">
+    <input type="text" id="searchBar" placeholder="Blogda ara...">
+
+    <div id="blogContainer">
+      <div class="card">
+        <h2>Web Geliştirme Nedir?</h2>
+        <p>Web geliştirme, internet sitelerinin tasarımı ve kodlanması sürecidir...</p>
+      </div>
+      <div class="card">
+        <h2>Yapay Zeka ile Gelecek</h2>
+        <p>Yapay zeka günümüzde hızla gelişiyor ve hayatımıza giriyor...</p>
+      </div>
+      <div class="card">
+        <h2>Mobil Uygulama Geliştirme</h2>
+        <p>Mobil uygulamalar, Android ve iOS cihazlarda kullanılabilen yazılımlardır...</p>
+      </div>
+    </div>
+
+    <button id="loadMore" class="btn">Daha Fazla Göster</button>
+  </div>
+
+  <footer>
+    <p>© 2025 Benim Web Sitem</p>
+  </footer>
+
+  <script>
+    // Arama Fonksiyonu
+    const searchBar = document.getElementById('searchBar');
+    const blogContainer = document.getElementById('blogContainer');
+    searchBar.addEventListener('input', function() {
+      const filter = this.value.toLowerCase();
+      const cards = blogContainer.getElementsByClassName('card');
+      Array.from(cards).forEach(card => {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(filter) ? '' : 'none';
+      });
+    });
+
+    // Daha Fazla Göster Fonksiyonu
+    const loadMore = document.getElementById('loadMore');
+    loadMore.addEventListener('click', function() {
+      const newCard = document.createElement('div');
+      newCard.className = 'card';
+      newCard.innerHTML = `<h2>Yeni Blog Yazısı</h2>
+                           <p>Bu yeni blog yazısı dinamik olarak eklendi.</p>`;
+      blogContainer.appendChild(newCard);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İletişim</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    input, textarea { width: 100%; padding: 10px; margin: 10px 0; border-radius: 6px; border:1px solid #ccc; }
+    button { background:#1cc88a; color:white; border:none; padding:10px 20px; border-radius:6px; cursor:pointer; }
+    button:hover { background:#17a673; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>İletişim</h1>
+    <p>Bana mesaj göndermek için formu kullanabilirsiniz</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Ana Sayfa</a>
+    <a href="projeler.html">Projeler</a>
+    <a href="galeri.html">Galeri</a>
+    <a href="blog.html">Blog</a>
+    <a href="hakkinda.html">Hakkında</a>
+    <a href="iletisim.html">İletişim</a>
+  </nav>
+
+  <div class="container">
+    <div class="card">
+      <form>
+        <label>Adınız Soyadınız:</label>
+        <input type="text" name="ad" placeholder="Adınızı girin" required>
+
+        <label>E-posta:</label>
+        <input type="email" name="email" placeholder="E-posta adresiniz" required>
+
+        <label>Mesajınız:</label>
+        <textarea rows="5" name="mesaj" placeholder="Mesajınızı yazın..." required></textarea>
+
+        <button type="submit">Gönder</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Benim Web Sitem</p>
+  </footer>
+</body>
+</html>
